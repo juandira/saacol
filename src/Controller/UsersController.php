@@ -9,7 +9,7 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-	//Función de login
+	
 	public function login()
 	{
 		if($this->request->is('post'))
