@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * Users Controller
+ * Users Controller pru
  *
  */
 class UsersController extends AppController
