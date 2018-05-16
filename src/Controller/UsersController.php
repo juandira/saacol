@@ -5,8 +5,6 @@ use App\Controller\AppController;
 
 /**
  * Users Controller
- * pru
- */
 class UsersController extends AppController
 {
 	
@@ -29,7 +27,7 @@ class UsersController extends AppController
 	
 	public function logout()
 	{
-		return $this->redirect($this->logout());
+		return $this->redirect($this->Auth->logout());
 	}
 	
 	public function home()
