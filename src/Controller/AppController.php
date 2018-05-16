@@ -59,7 +59,7 @@ class AppController extends Controller
 			],
 			'authError' => 'Ingrese sus datos',
 			'loginRedirect' => [
-				'controller' => 'Classifications',
+				'controller' => 'Assets',
 				'action' => 'index'
 			],
 			'logoutRedirect' => [
