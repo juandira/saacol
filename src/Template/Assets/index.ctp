@@ -19,7 +19,7 @@
     </ul>
 </nav>
 <div class="assets index large-9 medium-8 columns content">
-    <h3><?= __('Assets') ?></h3>
+    <h3>Activos</h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
