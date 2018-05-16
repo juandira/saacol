@@ -5,8 +5,6 @@ use App\Controller\AppController;
 
 /**
  * Users Controller
- *oliiiii prueba
- */
 class UsersController extends AppController
 {
 	
