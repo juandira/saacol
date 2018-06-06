@@ -16,6 +16,7 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Cleanings'), ['controller' => 'Cleanings', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Cleaning'), ['controller' => 'Cleanings', 'action' => 'add']) ?></li>
+		<li><?= $this->Html->link('export', ['controller' => 'assets', 'action' => 'export', '_ext' => 'csv']) ?></li>
     </ul>
 </nav>
 <div class="assets index large-9 medium-8 columns content">

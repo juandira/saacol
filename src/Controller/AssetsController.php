@@ -12,6 +12,14 @@ use App\Controller\AppController;
  */
 class AssetsController extends AppController
 {
+	public function export() {
+		$this->response->withDownload('export.csv');
+		$data = $this->Asset->find('all')->toArray();
+		$_serialize = 'data';
+   		$this->set(compact('data', '_serialize'));
+		$this->viewBuilder()->className('CsvView.Csv');
+		return;
+	}
 
     /**
      * Index method
