@@ -78,6 +78,9 @@ class UsersTableTest extends TestCase
      */
     public function testBuildRules()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+       $result = buildRules("prueba");
+       $expected = "resultado";
+
+       $this->asserTrue($result,$expected);
     }
 }
