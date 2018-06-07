@@ -45,7 +45,7 @@ class AssetsController extends AppController
 			echo $datatbl;
 			die;
 	}
-
+	
     /**
      * Index method
      *
