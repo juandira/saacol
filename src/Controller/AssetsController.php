@@ -13,12 +13,37 @@ use App\Controller\AppController;
 class AssetsController extends AppController
 {
 	public function export() {
-		$this->response->withDownload('export.csv');
-		$data = $this->Asset->find('all')->toArray();
-		$_serialize = 'data';
-   		$this->set(compact('data', '_serialize'));
-		$this->viewBuilder()->className('CsvView.Csv');
-		return;
+		$datatbl='';
+		$datatbl = '<table cellspacing="2" cellpadding="5" style="border:2px;text-align:center;" border="1" width="60%">';
+		
+		$datatbl .= '<tr>
+						<th style="text-align:center;">Id</th>
+						<th style="text-align:center;">Date</th>
+						<th style="text-align:center;">Name</th>
+						<th style="text-align:center;">Observation</th>
+					</tr>';
+		$assets = $this->Assets->find('all')->toArray();
+		foreach($assets as $assets){
+			$id = $assets['id'];
+			$date = $assets['date'];
+			$name = $assets['name'];
+			$observation = $assets['observation'];
+			$datatbl .= '<tr>
+							<td style="text-align:center;">'. $id .'</td>
+							<td style="text-align:center;">'. $date .'</td>
+							<td style="text-align:center;">'. $name .'</td>
+							<td style="text-align:center;">'. $observation .'</td>
+						</tr>';
+		}
+		$datatbl .= "</table>";
+		
+			// Excel Export
+			header('Content-Type: application/force-download');
+			header('Content-disposition: attachment; filename= reporte.xls');
+			header("Pragma: ");
+			header("Cache-Control: ");
+			echo $datatbl;
+			die;
 	}
 
     /**
