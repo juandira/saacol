@@ -12,7 +12,30 @@ use App\Controller\AppController;
  */
 class AssetsController extends AppController
 {
+	public function export() {
+		$this->response->withDownload('export.csv');
+		$data = $this->Assets->find('all')->toArray();
+		$_serialize = 'data';
+   		$this->set(compact('data', '_serialize'));
+		$this->viewBuilder()->className('CsvView.Csv');
+		return;
+	}
 
+	// public function export() {
+        // $this->response->download('export.csv');
+        // $data = $this->Assets->find('all')->toArray();
+        // $_serialize = 'data';
+                  // $_delimiter = ','; //tab
+    // $_enclosure = '"';
+    // $_newline = '\n';
+    // $_eol = '~';
+    // $_bom = false;
+        // $_header = ['id', 'name', 'date','classification_id','observation','brand_id','user_id'}];
+// $_extract = ['id', 'name', 'date','classification_id','observation','brand_id','user_id'];
+// $this->set(compact('data', '_serialize', '_header', '_extract', '_delimiter'));
+        // $this->viewBuilder()->className('CsvView.Csv');
+        // return;
+    // }
     /**
      * Index method
      *
